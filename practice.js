@@ -250,6 +250,7 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
       this.birthday : birthday,
       this.ssn: ssn
     }
+    return newObj;
   }
 
 
@@ -266,6 +267,7 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
       this.expirationDate: expirationDate,
       this.securityCode: securityCode
     }
+    return newCard;
   }
   MakeCard(1234567890, 11/01/2019, 123);
 
@@ -280,6 +282,13 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
    Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard. While Object.assign would give you the answer, specRunner requires an answer without using it.
 */
 
-  function bindCard(MakePerson(), MakeCard()){
-    console.log(MakePerson() + MakeCard());
+  function bindCard(person, creditcard)
+    var combination = {};
+    for (var prop in person){
+      person[prop] = combination[prop];
+    }
+    for (var key in creditcard){
+      creditcard[key] = combination[key];
+    }
+    return combination;
   }
